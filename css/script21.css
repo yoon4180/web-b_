@@ -1,0 +1,76 @@
+@charset "utf-8";
+@import url('reset.css');
+
+.nav_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 2. 이거 해주면 안 늘어나고 본인들의 높이값 가짐 */
+    margin: 30px;
+    background-color: #fff8e8;
+    padding: 50px;
+}
+
+.nav {
+    width: 30%;
+    border: 1px solid #000; /* 1. 한 쪽 2차 메뉴 열리면 다른 nav의 border도 같이 늘어남 */
+}
+
+.nav .gnb {}
+
+.nav .gnb>li {}
+
+.nav .gnb>li a.depth-01 {
+    height: 40px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7C0116;
+    color: #E0A4B0;
+    border: 1px solid rgba(224, 164, 176, 0.5);
+    line-height: 40px;
+    padding: 0 8px;
+    position: relative;
+}
+
+.nav .gnb>li a.depth-01 img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 1차 메뉴에 아래방향 아이콘 추가 */
+.nav .gnb>li a.depth-01::after {
+    content: '';
+    background: url('../img/downarrow.png') center center / 100% no-repeat;
+    width: 20px;
+    height: 100%;
+    /* 이미지 추가 시 너비, 높이 값 필수 !! */
+    position: absolute;
+    top: 0;
+    right: 8px;
+}
+
+/* active 추가 됐을 때 스타일 */
+.nav .gnb>li a.depth-01.active {
+    background-color: #3d6631;
+}
+
+.nav .gnb>li a.depth-01.active::after {
+    transform: rotate(180deg);
+}
+
+.nav .gnb>li .depth-02 {
+    font-weight: 300;
+    background-color: #E0A4B0;
+    color: #7C0116;
+    display: none;  /* 2차 메뉴 안보이게 */
+}
+
+.nav .gnb>li .depth-02 li {
+    border: 1px solid rgba(124, 1, 21, 0.2);
+}
+
+.nav .gnb>li .depth-02 li a {
+    padding: 8px;
+    display: block;
+}

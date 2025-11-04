@@ -1,0 +1,386 @@
+@charset "utf-8";
+@import url('css/reset.css');
+
+:root {
+    --colorMainLight: #FDAFA0;
+    --colorMainDark: #FF9280;
+    --colorGreen: #a6c4a1;
+    --colorBrown: #8F826E;
+    --colorBgItem: #FCFCFC;
+    --colorGrey9: #999999;
+    --colorGreyD: #dddddd;
+    --colorBgGreen: #F5F8F5;
+    --colorBgPink: #F8F0F0;
+    --colorPink: #fac9e7;
+    --fontMain: 'pretendard';
+    --fontHanwhaB: 'HanWhaB';
+    --fontHanwhaR: 'HanWhaR';
+    --fontEngMain: 'ZCOOL XiaoWei';
+    --fontEngSub: 'Erode';
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--fontMain);
+}
+
+body.scroll {
+    overflow: hidden;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    z-index: 99999999;
+}
+
+.modal.on {
+    display: none;
+}
+
+.modal h2 {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    color: hsl(0, 0%, 100%);
+    font-size: 50px;
+    z-index: 999999999;
+}
+
+.modal.mobile h2 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    color: #fff;
+    font-size: 28px;
+    z-index: 999999999;
+}
+
+.modal.pc .close {
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 999999999;
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 70px;
+    padding: 8px;
+    border-radius: 1000px;
+    font-family: var(--fontMain);
+}
+
+.modal.mobile .close {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 999999999;
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 70px;
+    padding: 8px;
+    border-radius: 1000px;
+    font-family: var(--fontMain);
+}
+
+.modal .swiper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal .swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal .swiper-button-next,
+.modal .swiper-button-prev {
+    color: #fff;
+}
+
+.modal .swiper-button-next {
+    right: 50px;
+}
+
+.modal .swiper-button-prev {
+    left: 50px;
+}
+
+.mobile {
+    display: none;
+}
+
+.mobileVisual {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+#main .inner,
+#footer .inner {
+    max-width: 1440px;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 15rem;
+}
+
+.price3 {
+    margin-top: 20px;
+}
+
+.price3 span {
+    display: inline-block;
+    border-radius: 5px;
+    width: 48px;
+    height: 24px;
+    background-color: var(--colorMainDark);
+    color: #fff;
+    font-weight: 700;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.price3 strong {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.price3 s {
+    color: var(--colorGrey9);
+}
+
+.title h2 {
+    font-size: 4rem;
+    font-family: var(--fontEngMain);
+    margin-bottom: 50px;
+}
+
+/* amuse_pick####################### */
+.amuse_pick {
+    background-color: var(--colorBgGreen);
+    display: flex;
+    justify-content: space-between;
+    position: relative;/*  */
+    margin-bottom: 0;
+}
+
+.amuse_pick .img {
+    width: 45%;
+    height: 100vh;
+
+    position: sticky;/*  */
+    top: 0;
+}
+
+.amuse_pick .img div {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;/*  */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.amuse_pick .img div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.amuse_pick div.on {
+    opacity: 1;
+}
+
+.amuse_pick .content {
+    width: 55%;
+    height: 100%;
+    padding: 15rem 8rem;
+}
+
+.amuse_pick .content .title {
+    position: sticky;/*  */
+    top: 4rem;
+    left: 0;
+    z-index: 99;
+}
+
+.amuse_pick .content .title h3 {
+    font-family: var(--fontEngSub);
+    font-weight: 600;
+    font-size: 6rem;
+    position: relative;
+    background-color: var(--colorBgGreen);
+}
+
+.amuse_pick .content .title h3::before {
+    content: '';
+    width: calc(100% - 370px);
+    height: 1px;
+    background-color: var(--colorBrown);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.amuse_pick .content .item_list .item {
+    padding: 12rem 0;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--colorBrown);
+}
+
+.amuse_pick .content .item_list .item:last-child {
+    border: 0;
+}
+
+.amuse_pick .content .item_list .item figure {
+    max-width: 32rem;
+    width: 40%;
+    max-height: 32rem;
+    height: 16.8vw;
+    position: relative;
+}
+
+.amuse_pick .content .item_list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.amuse_pick .content .item_list .item figure button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid rgba(143, 130, 110, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--colorBgPink);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amuse_pick .content .item_list .item figure button img {
+    width: 25px;
+    height: 25px;
+    transition: 0.5s;
+    transform: rotate(0);
+}
+
+.amuse_pick .content .item_list .item figure button img.on {
+    transform: rotate(360deg);
+}
+
+.amuse_pick .content .item_list .item figure .color div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    transition: 0.5s;
+}
+
+.amuse_pick .content .item_list .item figure .color.on div:nth-child(1) {
+    right: 60px;
+}
+
+.amuse_pick .content .item_list .item figure .color.on div:nth-child(2) {
+    right: 90px;
+}
+
+.amuse_pick .content .item_list .item figure .color.on div:nth-child(3) {
+    right: 120px;
+}
+
+.amuse_pick .content .item_list .item figure .color.on div:nth-child(4) {
+    right: 150px;
+}
+
+.amuse_pick .content .item_list .item figure .color.on div:nth-child(5) {
+    right: 180px;
+}
+
+
+.amuse_pick .content .item_list .item .text {
+    width: 60%;
+}
+
+.amuse_pick .content .item_list .item .text p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    word-break: keep-all;
+}
+
+.amuse_pick .content .item_list .item .text h4 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    word-break: keep-all;
+    line-height: 1.3;
+}
+
+.amuse_pick .content .item_list .item .text .price3 {
+    margin-bottom: 50px;
+}
+
+.amuse_pick .content .item_list .item .text .price3 span {
+    font-size: 2.5rem;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    color: var(--colorMainDark);
+    margin-right: 10px;
+}
+
+.amuse_pick .content .item_list .item .text .price3 strong {
+    font-size: 2.5rem;
+    margin-right: 10px;
+}
+
+.amuse_pick .content .item_list .item .text .price3 s {
+    font-size: 2rem;
+}
+
+.amuse_pick .pick_bg div span {
+    position: absolute;
+    left: -99999px;
+}

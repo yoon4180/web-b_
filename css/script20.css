@@ -1,0 +1,85 @@
+@charset "utf-8";
+@import url('reset.css');
+
+.header {
+    background-color: rgb(204, 143, 163);
+    color: rgb(255, 252, 239);
+    height: 100px;
+    position: relative;
+}
+
+.header .inner {
+    max-width: 1280px;
+    width: calc(100% - 40px);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .inner .logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.header .inner .logo a {
+    display: block;
+}
+
+.header .inner .nav {}
+
+.header .inner .nav .gnb {
+    display: flex;
+    gap: 5px;
+}
+
+.header .inner .nav .gnb>li {
+    position: relative;
+}
+
+.header .inner .nav .gnb>li .depth-01 {
+    line-height: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 30px;
+    display: block;
+}
+
+.header .inner .nav .gnb>li .depth-02 {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: rgb(210, 224, 175);
+    color: rgb(204, 143, 163);
+    border: 1px solid rgb(158, 179, 121);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;/* 안보이게 */
+}
+
+.header .inner .nav .gnb>li .depth-02 li {}
+
+.header .inner .nav .gnb>li .depth-02 li a {
+    padding: 10px 0;
+    display: block;
+}
+
+.header .bg {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(253, 255, 223);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;/* 안보이게 */
+}
+
+/* 접근성 홈페이지 제작 시 */
+/* 내용은 읽고, 눈에는 안보이도록 제작 */
+.header .bg span {
+    position: absolute;
+    left: -9999px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탑버튼</title>
+    <link rel="stylesheet" href="css/script18.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.onload = () => {
+            let topJavascript = document.querySelector('.javascript');
+            let topJquery = $('.jquery'); //긴문장을 함축적으로 쓰게 해주는게 제이쿼리
+
+            //자바스크립트를 이용한 탑 버튼 구현
+            topJavascript.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            });
+
+
+            //제이쿼리를 이용한 탑 버튼 구현
+            //cdn js
+            topJquery.on('click', function(){
+                $('html, body').animate({
+                    scrollTop : 0
+                }, 1000) // 애니메이션 시간 1000=1초
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias distinctio minima ipsa in nesciunt excepturi
+        pariatur, aliquid, corrupti iusto esse vitae consequuntur dicta. Soluta repellat, cupiditate iusto nam unde
+        consequuntur?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus consectetur culpa fugit, magnam
+        molestiae in ratione harum labore! Modi error maiores deleniti cum. Aliquam adipisci eius voluptas iste,
+        accusamus nam.</p>
+
+    <div class="btn">
+        <button type="button" class="javascript">탑 자바스크립트</button>
+        <button type="button" class="jquery">탑 제이쿼리</button>
+    </div><!-- btn -->
+</body>
+
+</html>

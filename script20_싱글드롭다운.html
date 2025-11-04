@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>싱글드롭다운</title>
+    <link rel="stylesheet" href="css/script20.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //1차 메뉴에 마우스 올렸을 때 실행
+                //2차 메뉴를 드롭다운(부드럽게 내려옴)
+                //마우스 올렸을 때 mouseenter
+                //마우스 벗어났을 때 mouseleave
+            let depth01 = $('.header .gnb > li');
+            let depth02 = $('.header .depth-02');
+            let navBg = $('.header .bg');
+
+            depth01.on('mouseenter', function(){ //마우스 올림
+                $(this).find(depth02).stop().slideDown(300);
+                //$(this) => 클릭한 현재 요소
+                    //next() => 바로 다음 >>형제<< 선택자 선택 (.depth-01일 때)
+                    //find() => >>자식<< 선택 (자식 중에 depth02 찾기)
+                    //stop() => 중첩 방지. 진행 중인 애니메이션 멈추고 새로 시작시킴
+                    //slideDown() => 메소드(효과) 아래로 펼쳐짐. 괄호안에 애니메이션 시간 지정 가능
+                navBg.stop().slideDown();
+            });
+
+            depth01.on('mouseleave', function(){ //마우스 벗어남
+                $(this).find(depth02).stop().slideUp();
+                navBg.stop().slideUp();
+            });
+            
+
+        });//script end
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="inner">
+
+                <h1 class="logo">
+                    <a href="#">~(=^‥^)ノ</a>
+                </h1><!-- logo -->
+
+                <nav class="nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth-01">menu1</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-2</a></li>
+                                <li><a href="#">menu1-3</a></li>
+                                <li><a href="#">menu1-4</a></li>
+                                <li><a href="#">menu1-5</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">menu2</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu2-1</a></li>
+                                <li><a href="#">menu2-2</a></li>
+                                <li><a href="#">menu2-3</a></li>
+                                <li><a href="#">menu2-4</a></li>
+                                <li><a href="#">menu2-5</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">menu3</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu3-1</a></li>
+                                <li><a href="#">menu3-2</a></li>
+                                <li><a href="#">menu3-3</a></li>
+                                <li><a href="#">menu3-4</a></li>
+                                <li><a href="#">menu3-5</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">menu4</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu4-1</a></li>
+                                <li><a href="#">menu4-2</a></li>
+                                <li><a href="#">menu4-3</a></li>
+                                <li><a href="#">menu4-4</a></li>
+                                <li><a href="#">menu4-5</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                    </ul><!-- gnb -->
+                </nav><!-- nav -->
+
+            </div><!-- inner -->
+            <div class="bg"><span>내비게이션 배경</span></div>
+        </header><!-- header -->
+    </div><!-- #wrap -->
+</body>
+
+</html>

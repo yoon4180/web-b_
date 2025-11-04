@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 풀페이지</title>
+    <link rel="stylesheet" href="lib/fullpage.css">
+    <link rel="stylesheet" href="css/02.css">
+
+    <script src="lib/fullpage.js"></script>
+    <script>
+        window.onload = () => {
+            var myFullpage = new fullpage('#fullpage', {
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+                anchors: ['firstPage', 'secondPage', '3rdPage'],
+                navigation: true,
+                navigationTooltips: ['Page 1', 'Page 2', 'Page 3'],
+                showActiveTooltip: true,
+                menu: '#menu',
+                /* 더 필요한 기능의 스크립트 복붙 가능 */
+                /* responsive-auto-height 기능 */
+                /* 화면 너비 900 이하일 때 스크롤바로 변경됨 */
+                responsiveWidth: 900,
+                afterResponsive: function (isResponsive) {
+                }
+            });
+        };//script end
+    </script>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="intro">
+                <h1>Section 1</h1>
+                <p>
+                    Use the `navigationTooltips` option to use a text for each of the bullets in the navigation element.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nam earum reprehenderit ullam fugit
+                    in excepturi sequi repudiandae minus, debitis blanditiis delectus velit ad ipsam quos, praesentium
+                    voluptate, animi iusto?</p>
+            </div><!-- intro -->
+        </div><!-- section -->
+
+        <div class="section fp-auto-height-responsive" id="section1">
+            <h1>Section 2</h1>
+        </div><!-- section -->
+
+        <div class="section" id="section2">
+            <h1>Section 3</h1>
+        </div><!-- section -->
+    </div>
+</body>
+
+</html>

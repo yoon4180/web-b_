@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쏘카</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = () => {
+            let menuBtn = document.getElementsByClassName('menu_btn')[0];
+            let closeBtn = document.getElementsByClassName('close_btn')[0];
+            let menu = document.getElementsByClassName('nav')[0];
+
+            menuBtn.addEventListener('click', () => {
+                menu.classList.add('active');
+            });
+            closeBtn.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+
+/*             let sec01Item = document.getElementsByClassName('item-01');
+            let sec01Prev = document.getElementsByClassName('prev')[0];
+            let sec01Next = document.getElementsByClassName('next')[0];
+
+            let i = 0;
+            
+            sec01Next.addEventListener('click', () => {
+                i++;
+                sec01Item[i - 1].classList.remove('active');
+                if (i >= sec01Item.length) {
+                    i = sec01Item.length - 1
+                }
+                sec01Item[i].classList.add('active');
+            });
+            sec01Prev.addEventListener('click', () => {
+                i--;
+                sec01Item[i + 1].classList.remove('active');
+                if (i < 0) {
+                    i = 0
+                }
+                sec01Item[i].classList.add('active');
+            }); */
+            var swiper = new Swiper(".sec01_Swiper", {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        };//script end
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="index.html"><img src="img/logo.svg" alt="socar_logo"></a>
+            </h1><!-- .logo end -->
+            <button class="menu_btn">
+                <img src="img/menu.acbe7c0abc9d04c318f29f7f597aebc1.svg" alt="menu_button">
+            </button><!-- .menu_btn end -->
+            <nav class="nav">
+                <div class="nav_inner">
+                    <div class="btn_wrap">
+                        <button class="close_btn">
+                            <img src="img/close.cff545727188b814ab3b80abe3ffd59a.svg" alt="close_button">
+                        </button><!-- .close_btn end -->
+                    </div><!-- .btn_wrap end -->
+                    <ul class="gnb">
+                        <li><a href="#">쏘카</a></li>
+                        <li><a href="#">쏘카플랜</a></li>
+                        <li><a href="#">모두의주차장</a></li>
+                        <li><a href="#">쏘카 엔터프라이즈</a></li>
+                        <li><a href="#">쏘카일레클</a></li>
+                        <li><a href="#">쏘카 항공권</a></li>
+                        <li><a href="#">쏘카 숙박</a></li>
+                    </ul><!-- .gnb end -->
+                    <div class="line"></div>
+                    <ul class="gnb">
+                        <li><a href="#">(주)쏘카</a></li>
+                        <li><a href="#">쏘카 브랜드 센터</a></li>
+                    </ul><!-- .gnb end -->
+                </div><!-- .nav_inner end -->
+            </nav><!-- .nav end -->
+        </div><!-- .inner end -->
+    </header><!-- .header end -->
+
+    <main class="main">
+        <section class="main_visual">
+            <video src="img/main_video.mp4" autoplay muted loop></video>
+            <div class="text">
+                <h2>Lifetime Mobility</h2>
+                <h3>라이프타임 모빌리티 플랫폼, 쏘카</h3>
+            </div><!-- .text end -->
+            <div class="app_wrap">
+                <div class="app">
+                    <a href="#">
+                        <img src="img/download.svg" alt="socar_download">
+                        <p>쏘카 앱 다운로드</p>
+                    </a><!-- .app end -->
+                </div><!-- .app end -->
+            </div><!-- .app_wrap end -->
+        </section><!-- .main_visual end -->
+
+        <section class="section-01">
+            <div class="swiper sec01_Swiper">
+                <div class="box">
+                    <h2>차가 필요한 모든 순간</h2>
+                    <h3>쏘카 카셰어링</h3>
+                </div><!-- .box end -->
+                <div class="swiper-wrapper">                    
+                    <div class="swiper-slide active">
+                        <img src="img/slide_normal_00.f85e80ec4e0fe5d3a973.jpg" alt="slide_img_01">
+                        <div class="text-01">
+                            <h2>24시간 언제나</h2>
+                            <p>시간에 구애받지 않고<br />
+                                쏘카 앱으로 간편하게 예약</p>
+                        </div><!-- .text-01 end -->
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide" data-aos="fade-up">
+                        <img src="img/slide_normal_01.116f64c038df9d13c6ff.jpg" alt="slide_img_02">
+                        <div class="bg"></div>
+                        <div class="text-01">
+                            <h2>전국 어디서나</h2>
+                            <p>가까운 거리에 있는 쏘카존이나<br />
+                                내가 있는 곳으로 찾를 불러 편하게 이동</p>
+                        </div><!-- .text-01 end -->
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide" data-aos="fade-up">
+                        <img src="img/slide_normal_02.48bf25d4ecccd1025052.jpg" alt="slide_img_03">
+                        <div class="bg"></div>
+                        <div class="text-01">
+                            <h2>필요한 시간만큼</h2>
+                            <p>간단한 장 보기부터 주말여행까지<br />
+                                10분 단위로 원하는 만큼만 이용</p>
+                        </div><!-- .text-01 end -->
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide" data-aos="fade-up">
+                        <img src="img/slide_normal_03.d476172897623a65922d.jpg" alt="slide_img_04">
+                        <div class="bg"></div>
+                        <div class="text-01">
+                            <h2>다양한 차종을</h2>
+                            <p>혼자 이동할 때, 가족과 캠핑할 때<br />
+                                상황에 맞게 필요한 차를 선택</p>
+                        </div><!-- .text-01 end -->
+                    </div><!-- .swiper-slide end -->
+                </div><!-- .swiper-wrapper end -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div><!-- .sec01_Swiper end -->
+        </section><!-- .section-01 end -->
+
+        <section class="section-02">
+            <div class="sec02_inner">
+                <div class="box" data-aos="fade-up">
+                    <h2>끊임없이 확장되는 이동 경험</h2>
+                    <h3>쏘카의 다양한 서비스</h3>
+                </div><!-- .box end -->
+                <div class="list-02">
+                    <div class="item-02" data-aos="fade-up">
+                        <a href="#">
+                            <img src="img/card_normal_00.d1fd0c76d94368682039.jpg" alt="card_img_1">
+                            <div class="text-02">
+                                <h2>쏘카플랜</h2>
+                                <p>한 달 이상 원하는 만큼 내 차처럼 이용하는<br />
+                                    중장기 차량 대여 서비스</p>
+                            </div><!-- .text-02 end -->
+                            <div class="bg"></div>
+                            <div class="more_btn">
+                                <img class="before" src="img/more.png" alt="자세히보기">
+                                <img class="after" src="img/more_b.png" alt="자세히보기">
+                            </div><!-- .more_btn end -->
+                        </a>
+                    </div><!-- .item-02 end -->
+                    <div class="item-02" data-aos="fade-up">
+                        <a href="#">
+                            <img src="img/card_normal_01.aef2d5c9bdde62c36c5b.jpg" alt="card_img_2">
+                            <div class="text-02">
+                                <h2>모두의주차장</h2>
+                                <p>주차장 정보부터 할인까지 한번에 받는<br />
+                                    주차장 연계 서비스</p>
+                            </div><!-- .text-02 end -->
+                            <div class="bg"></div>
+                            <div class="more_btn">
+                                <img class="before" src="img/more.png" alt="자세히보기">
+                                <img class="after" src="img/more_b.png" alt="자세히보기">
+                            </div><!-- .more_btn end -->
+                        </a>
+                    </div><!-- .item-02 end -->
+                    <div class="item-02" data-aos="fade-up">
+                        <a href="#">
+                            <img src="img/card_normal_02.ddfd315cdf2c26684ec7.jpg" alt="card_img_3">
+                            <div class="text-02">
+                                <h2>쏘카 엔터프라이즈</h2>
+                                <p>쏘카의 이동상품을 맞춤 제공하는<br />
+                                    기업 전용 서비스</p>
+                            </div><!-- .text-02 end -->
+                            <div class="bg"></div>
+                            <div class="more_btn">
+                                <img class="before" src="img/more.png" alt="자세히보기">
+                                <img class="after" src="img/more_b.png" alt="자세히보기">
+                            </div><!-- .more_btn end -->
+                        </a>
+                    </div><!-- .item-02 end -->
+                    <div class="item-02" data-aos="fade-up">
+                        <a href="#">
+                            <img src="img/card_normal_03.13bdbdd988e76b83764a.jpg" alt="card_img_4">
+                            <div class="text-02">
+                                <h2>쏘카일레클</h2>
+                                <p>라스트마일 이동을 책임지는<br />
+                                    전기자전거 공유 서비스</p>
+                            </div><!-- .text-02 end -->
+                            <div class="bg"></div>
+                            <div class="more_btn">
+                                <img class="before" src="img/more.png" alt="자세히보기">
+                                <img class="after" src="img/more_b.png" alt="자세히보기">
+                            </div><!-- .more_btn end -->
+                        </a>
+                    </div><!-- .item-02 end -->
+                    <div class="item-02" data-aos="fade-up">
+                        <a href="#">
+                            <img src="img/card_normal_04.f6f2a1efdbe69958636b.jpg" alt="card_img_5">
+                            <div class="text-02">
+                                <h2>쏘카 항공권</h2>
+                                <p>국내 항공이동을 가장 합리적으로<br />
+                                    항공 연계 서비스</p>
+                            </div><!-- .text-02 end -->
+                            <div class="bg"></div>
+                            <div class="more_btn">
+                                <img class="before" src="img/more.png" alt="자세히보기">
+                                <img class="after" src="img/more_b.png" alt="자세히보기">
+                            </div><!-- .more_btn end -->
+                        </a>
+                    </div><!-- .item-02 end -->
+                </div><!-- .list-02 end -->
+            </div><!-- .sec02_inner end -->
+        </section><!-- .section-02 end -->
+
+        <section class="section-03">
+            <img src="img/brand_center.f3245d6952d8f5386bf3.jpg" alt="brand_center_img">
+            <div class="bg"></div>
+            <div class="text-03">
+                <div class="box">
+                    <h2>쏘카가 새롭게 그려나가는</h2>
+                    <h2>자유로운 이동</h2>
+                </div><!-- .box end -->
+                <button class="brand_center">
+                    <p>브랜드 센터 바로가기</p>
+                    <img src="img/arrow.png" alt="브랜드 센터 바로가기">
+                </button><!-- .brand_center end -->
+            </div><!-- .text-03 end -->
+        </setion><!-- .section-03 end -->
+    </main><!-- .main end -->
+
+    <footer class="footer">
+        <div class="footer_wrap">
+            <div class="left">
+                <div class="info">
+                    <strong>(주)쏘카</strong>
+                    제주특별자치도 제주시 연미길 42 (오라삼동) | TEL : 1661-3315 | FAX : 02-6969-9333<br />
+                    통신판매업 <a href="#">사업자정보 확인</a><br />
+                    신고번호 : 2019-제주오라-3호 | 사업자등록번호 : 616-81-90529 | 대표자 : 박재욱
+                </div><!-- .info end -->
+                <div class="left_inner">
+                    <ul class="text_footer">
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">위치정보 이용약관</a></li>
+                        <li><a href="#">차량손해면책제도</a></li>
+                    </ul><!-- .text_footer end -->
+                    <div class="footer_icon">
+                        <a href="#"><img src="img/i-instagram.svg" alt=""></a>
+                        <a href="#"><img src="img/i-facebook.svg" alt=""></a>
+                        <a href="#"><img src="img/i-youtube.svg" alt=""></a>
+                    </div><!-- .footer_icon end -->
+                </div><!-- .left_inner end -->
+            </div><!-- left end -->
+            <div class="right">
+                <ul class="company">
+                    <li>회사</li>
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">채용 공고</a></li>
+                </ul><!-- .company end -->
+                <ul class="socar">
+                    <li>쏘카</li>
+                    <li><a href="#">이용 안내</a></li>
+                    <li><a href="#">요금 안내</a></li>
+                    <li><a href="#">혜택 안내</a></li>
+                    <li><a href="#">이용 약관</a></li>
+                </ul><!-- .socar end -->
+                <ul class="faq">
+                    <li>문의</li>
+                    <li><a href="#">자주 하는 질문</a></li>
+                    <li><a href="#">제휴 문의</a></li>
+                </ul><!-- .faq end -->
+                <ul class="website">
+                    <li>관련 웹사이트</li>
+                    <li><a href="#">(주)쏘카</a></li>
+                    <li><a href="#">쏘카플랜</a></li>
+                    <li><a href="#">모두의주차장</a></li>
+                    <li><a href="#">쏘카 엔터프라이즈</a></li>
+                    <li><a href="#">쏘카 일레클</a></li>
+                    <li><a href="#">쏘카 항공권</a></li>
+                </ul><!-- .website end -->
+            </div><!-- .right end -->
+        </div><!-- .footer_wrap end -->
+    </footer><!-- .footer end -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html>

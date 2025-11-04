@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>움직이는 메뉴바</title>
+    <link rel="stylesheet" href="css/script25.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            // 1️⃣메뉴에 마우스 올리면 실행 (너비값이 >>같은<< 메뉴바)
+                // 부모를 기준으로 x축 좌표값 확인
+                // ⭐position().left를 변수값 지정 (position().top하면 y축 좌표값 확인가능)
+                // 메뉴바에 animate 적용 (left는 position필수)
+
+            $('.menu-01 ul li').on('mouseenter', function () {
+                //console.log($(this).position().left) 확인
+                let moveLeft = $(this).position().left;
+                $('.menu-01 .menu_bar').stop().animate({
+                    'left' : moveLeft
+                }, 500);
+            });
+
+
+            // 2️⃣메뉴에 마우스 올리면 실행 (너비값이 >>다른<< 메뉴바)
+                // ⭐outerWidth() 패딩 + 테두리 포함된 너비값 찾기
+                // left -> 마우스 올린 요소($(this))의 x축 좌표값
+                // width -> 마우스 올린 요소($(this))의 너비값
+                // 메뉴바에 animate 적용 (left값과 width값 적용)
+
+            // + 디폴트로 첫번째 li의 너비만큼 메뉴바 너비 갖도록 지정해둠
+            let menuWidth = $('.menu-02 ul li:first').outerWidth();
+            $('.menu-02 .menu_bar').width(menuWidth);
+
+            $('.menu-02 ul li').on('mouseenter', function () {
+                //console.log($(this).outerWidth()) 확인
+                let moveLeft = $(this).position().left;
+                let moveWidth = $(this).outerWidth();
+                $('.menu-02 .menu_bar').stop().animate({
+                    'left' : moveLeft,
+                    'width' : moveWidth
+                }, 200);
+            });
+        })//script end
+    </script>
+</head>
+
+<body>
+    <div class="menu-01">
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+
+        <div class="menu_bar">
+            <span>메뉴바</span>
+        </div><!-- menu_bar -->
+    </div><!-- memnu-01 -->
+
+    <div class="menu-02">
+        <ul>
+            <li>뉴스스탠드</li>
+            <li>언론사편집</li>
+            <li>쇼핑</li>
+            <li>엔터</li>
+            <li>스포츠</li>
+            <li>경제</li>
+        </ul>
+
+        <div class="menu_bar">
+            <span>메뉴바</span>
+        </div><!-- menu_bar -->
+    </div><!-- menu-02 -->
+</body>
+
+</html>

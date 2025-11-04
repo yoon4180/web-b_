@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로딩 페이지</title>
+    <link rel="stylesheet" href="css/script26.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.loading').addClass('active')
+
+            // 일정시간 뒤에 로딩페이지 슬라이드업 실행
+            // SetTimeout(function(){
+                // 실행될 코드
+            // }, 시간)
+            setTimeout(function(){
+                $('.loading').slideUp()
+            }, 3000)
+
+        });//script end
+    </script>
+</head>
+
+<body>
+    <div class="loading">
+        <div>
+            <span>로</span>
+            <span>딩</span>
+            <span>중</span>
+            <span>💢</span>
+        </div>
+    </div><!-- loading -->
+
+    <div id="wrap">
+        <header class="header">🍓헤더🍓</header>
+        <main class="main"><img src="img/redkitty.jpg" alt=""></main>
+        <footer class="footer">⭐푸터⭐</footer>
+    </div>
+</body>
+
+</html>

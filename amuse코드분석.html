@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="amuse.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        $(function () {
+            let pickItem = $('.amuse_pick .item');
+            let pickImgBox = $('.amuse_pick .img');
+
+            $(window).scroll(function () {
+                let pickItem = $('.amuse_pick .item');
+                let pickImg = $('.amuse_pick .img');
+
+                if (pickImg.position().top >= (pickItem.eq(1).position().top) / 2) {
+                    if (pickImg.position().top >= (pickItem.eq(4).position().top) / 2) {
+                        pickImg.children().removeClass('on');
+                        $('.amuse_pick .img .img3').addClass('on');
+                    }
+                    else {
+                        pickImg.children().removeClass('on');
+                        $('.amuse_pick .img .img2').addClass('on');
+                    }
+                }
+
+                if (pickImg.position().top < (pickItem.eq(1).position().top) / 2) {
+                    pickImg.children().removeClass('on');
+                    $('.amuse_pick .img .img1').addClass('on');
+                }
+
+                let pickBg = $('.amuse_pick .pick_bg');
+                if (pickBg.position().top >= (pickItem.eq(1).position().top)) {
+                    if ($(window).width() > 767) {
+                        if (pickBg.position().top >= (pickItem.eq(3).position().top) - 220) {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg3').addClass('on');
+                        }
+                        else {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg2').addClass('on');
+                        }
+                    }
+
+                    if ($(window).width() > 480) {
+                        if (pickBg.position().top >= (pickItem.eq(3).position().top) - 300) {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg3').addClass('on');
+                        }
+                        else {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg2').addClass('on');
+                        }
+                    }
+
+                    if ($(window).width() <= 480) {
+                        if (pickBg.position().top >= (pickItem.eq(3).position().top) - 150) {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg3').addClass('on');
+                        }
+                        else {
+                            pickBg.children().removeClass('on');
+                            $('.amuse_pick .pick_bg2').addClass('on');
+                        }
+                    }
+
+                }
+                if (pickBg.position().top < (pickItem.eq(1).position().top)) {
+                    pickBg.children().removeClass('on');
+                    $('.amuse_pick .pick_bg1').addClass('on');
+                }
+            })
+
+        })//script end 
+    </script>
+</head>
+
+<body>
+    <section class="amuse_pick">
+        <div class="img">
+            <div class="img1 on">
+                <img src="img/3amusePick/pick01.jpg" alt="어뮤즈가 추천하는 상품">
+            </div><!-- .img1 end -->
+            <div class="img2">
+                <img src="img/3amusePick/pick02.jpg" alt="어뮤즈가 추천하는 상품">
+            </div><!-- .img2 end -->
+            <div class="img3">
+                <img src="img/3amusePick/pick03.jpg" alt="어뮤즈가 추천하는 상품">
+            </div><!-- .img3 end -->
+        </div><!-- .img end -->
+
+        <div class="pick_bg">
+            <div class="pick_bg1 on"><span>어뮤즈픽 배경1</span></div>
+            <div class="pick_bg2"><span>어뮤즈픽 배경2</span></div>
+            <div class="pick_bg3"><span>어뮤즈픽 배경3</span></div>
+        </div><!-- .pick_bg end -->
+
+        <div class="content">
+            <div class="title">
+                <h3>AMUSE'S PICK</h3>
+            </div><!-- .title end -->
+
+            <div class="item_list">
+                <div class="item">
+                    <div class="text">
+                        <a href="#">
+                            <p>내 피부 톤에 핏,섬세한 톤-핏 음영 컬러레이션<br>
+                                내 눈가에 핏, 깔끔한 밀착-핏 생기 레이어링
+                            </p>
+                            <h4>아이 컬러 팔레트</h4>
+                            <div class="price3">
+                                <span>15%</span>
+                                <strong>28,900원</strong>
+                                <s>34,000원</s>
+                            </div><!-- .price3 end -->
+                        </a>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .text end -->
+                    <figure>
+                        <img src="img/3amusePick/pick01-3.jpg" alt="아이 컬러 팔레트">
+
+                        <div class="color">
+                            <div class="pallette FFB1BB"></div>
+                            <div class="pallette FE89BB"></div>
+                            <div class="pallette E4B493"></div>
+                            <div class="pallette FC76D9"></div>
+                            <div class="pallette E4002B"></div>
+                        </div><!-- .color end -->
+
+                        <button class="see_color">
+                            <img src="img/3amusePick/colors.svg" alt="색상 보기">
+                        </button><!-- .see_color end -->
+                    </figure>
+                </div><!-- .item end -->
+                <div class="item">
+                    <div class="text">
+                        <a href="#">
+                            <p>꽃잎 이슬의 맑은 컬러 가득히 묻어남 없이<br>
+                                촉촉 산뜻한 35% 고수분 롱래스팅 워터 틴트
+                            </p>
+                            <h4>듀 틴트 (12종 택1)</h4>
+                            <div class="price3">
+                                <strong>20,000원</strong>
+                            </div><!-- .price3 end -->
+                        </a>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .text end -->
+                    <figure>
+                        <img src="img/3amusePick/pick01-2.jpg" alt="듀 틴트 (12종 택1)">
+                    </figure>
+                </div><!-- .item end -->
+                <div class="item">
+                    <div class="text">
+                        <a href="#">
+                            <p>통통한 애교살 볼륨과 반짝임을<br>
+                                손쉽고 부드럽게 완성하는<br>
+                                롱래스팅 애교살 볼륨 펜슬
+                            </p>
+                            <h4>애교살 볼륨 펜슬</h4>
+                            <div class="price3">
+                                <strong>20,000원</strong>
+                            </div><!-- .price3 end -->
+                        </a>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .text end -->
+                    <figure>
+                        <img src="img/3amusePick/pick02-4.jpg" alt="애교살 볼륨 펜슬">
+                    </figure>
+                </div><!-- .item end -->
+                <div class="item">
+                    <div class="text">
+                        <a href="#">
+                            <p>두가지 제형과 컬러를 자유롭게 믹스하여<br>
+                                촉촉하고 싱그러운 생과즙광을 완성하는<br>
+                                립&amp;치크 헬시 밤
+                            </p>
+                            <h4>립 앤 치크 헬시 밤 (5종 택1)</h4>
+                            <div class="price3">
+                                <span>16%</span>
+                                <strong>14,400원</strong>
+                                <s>17,000원</s>
+                            </div><!-- .price3 end -->
+                        </a>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .text end -->
+                    <figure>
+                        <img src="img/3amusePick/pick02-2.jpg" alt="립 앤 치크 헬시 밤 (5종 택1)">
+                    </figure>
+                </div><!-- .item end -->
+                <div class="item">
+                    <div class="text">
+                        <a href="#">
+                            <p>맑고 선명한 탱글 젤리가 쫀쫀 밀착되는<br>
+                                12시간 지속의 롱래스팅 젤핏 틴트
+                            </p>
+                            <h4>젤핏 틴트(12종 택1)</h4>
+                            <div class="price3">
+                                <strong>20,000원</strong>
+                            </div><!-- .price3 end -->
+                        </a>
+                        <span class="more_btn"><a href="#">View more</a></span>
+                    </div><!-- .text end -->
+                    <figure>
+                        <img src="img/3amusePick/pick03-01.jpg" alt="젤핏 틴트(12종 택1)">
+                    </figure>
+                </div><!-- .item end -->
+            </div><!-- .item_list end -->
+        </div><!-- .content end -->
+    </section>
+</body>
+
+</html>

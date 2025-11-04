@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 효과</title>
+    <link rel="stylesheet" href="css/script22.css">
+    <script src="lib/jquery-3.7.1.min.js"></script><!-- 순서중요!! -->
+    <script src="lib/jquery-ui.min.js"></script><!-- ui가 뒤에 오게 -->
+    <script>
+        $(function () {
+            $('.hide').on('click', function () {
+                $(this).siblings('.image').hide(300);
+            });
+            $('.show').on('click', function () {
+                $(this).siblings('.image').show(300);
+            });
+
+
+            $('.fadeIn').on('click', function () {
+                $(this).siblings('.image').fadeIn(300);
+            });
+            $('.fadeOut').on('click', function () {
+                $(this).siblings('.image').fadeOut(300);
+            });
+
+
+            $('.slideUp').on('click', function () {
+                $(this).siblings('.image').slideUp(300);
+            });
+            $('.slideDown').on('click', function () {
+                $(this).siblings('.image').slideDown(300);
+            });
+
+
+            $('.toggle').on('click', function () {
+                $(this).siblings('.image').toggle(300);
+            });
+
+
+            $('.fadeToggle').on('click', function () {
+                $(this).siblings('.image').fadeToggle(500, 'easeInBounce');
+            });// jQuery 공작소에서 원하는 효과 붙여넣기하면 적용 가능
+            //jQuery ui 파일 있어야만!! 가능
+
+
+            $('.slideToggle').on('click', function () {
+                $(this).siblings('.image').slideToggle(500, 'easeOutBounce');
+            });
+
+
+            $('.animate').on('click', function () {
+                $(this).siblings('.image').animate({
+                    'left': '500px',/* position 필수 */
+                }, 1000, 'easeOutBounce');
+            });
+
+        });//script end
+    </script>
+</head>
+
+<body>
+    <div class="list">
+        <div class="item">
+            <button type="button" class="hide">hide</button>
+            <button type="button" class="show">show</button>
+            <div class="image">
+                <img src="img/pochita (3).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+
+        <div class="item">
+            <button type="button" class="fadeIn">fadeIn</button>
+            <button type="button" class="fadeOut">fadeOut</button>
+            <div class="image">
+                <img src="img/pochita (4).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+
+        <div class="item">
+            <button type="button" class="slideUp">slideUp</button>
+            <button type="button" class="slideDown">slideDown</button>
+            <div class="image">
+                <img src="img/pochita (5).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+
+        <div class="item">
+            <button type="button" class="toggle">toggle</button>
+            <div class="image">
+                <img src="img/pochita (6).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+
+        <div class="item">
+            <button type="button" class="fadeToggle">fadeToggle</button>
+            <div class="image">
+                <img src="img/pochita (7).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+
+        <div class="item">
+            <button type="button" class="slideToggle">slideToggle</button>
+            <div class="image">
+                <img src="img/pochita (8).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+
+        <div class="item">
+            <button type="button" class="animate">animate</button>
+            <div class="image">
+                <img src="img/pochita (1).jpg" alt="#">
+            </div><!-- .image end -->
+        </div><!-- .item end -->
+    </div><!-- .list end -->
+</body>
+
+</html>

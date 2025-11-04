@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복실행</title>
+    <link rel="stylesheet" href="css/script27.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            // 일정시간동안 반복적으로 실행
+            // setInterval()
+
+            // .top_banner ul li에게 순차적으로 클래스명 on 추가
+            // eq(index) => 제이쿼리에서 요소의 순서 지정
+            // $('.top_banner ul li').eq(2).addClass('on') = 세번째 li에게 클래스명 on 추가
+
+            let i = 0
+            let topBanner = $('.top_banner ul li')
+            setInterval(function () {
+                i++;
+                console.log(i); //2초마다 증가하는 거 확인
+                if (i >= topBanner.length) {
+                    i = 0;
+                } // i값 조정
+                
+                topBanner.removeClass('on')
+                topBanner.eq(i).addClass('on')
+            }, 2000);
+
+        });//script end
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="top_banner">
+            <ul>
+                <li class="on">✨첫 가입 선물 2,000P✨</li>
+                <li>💎시즌예약 할인 이벤트 진행 중💎</li>
+                <li>🌊출석체크하고 쿠폰 받기🌊</li>
+            </ul>
+        </div><!-- top_banner -->
+
+        <header class="header">헤더🐳</header>
+        <main class="main">메인</main>
+        <footer>푸터</footer>
+    </div><!-- #wrap -->
+</body>
+
+</html>
