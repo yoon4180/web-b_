@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            display: flex;
+            align-items: end;
+        }
+
+        .title .p-style {
+            font-size: 25px;
+        }
+
+        .title .o-style {
+            font-size: 18.7px;
+            font-weight: 500;
+        }
+
+        /* 커서 */
+        .typing {
+            border-right: 3px solid #000;
+            animation: cursor .4s infinite;
+        }
+
+        @keyframes cursor {
+            0% {
+                border-color: transparent;
+            }
+
+            100% {
+                border-color: #000;
+            }
+        }
+    </style>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const pSpan = document.querySelector(".p-style");
+            const oSpan = document.querySelector(".o-style");
+
+            const text = "Portfolio";
+            const first = text[0];          // P
+            const rest = text.slice(1);     // ortfolio
+
+            let idx = 0;
+            let isDeleting = false;
+
+            function loop() {
+
+                if (!isDeleting) {
+                    // ✅ 타이핑
+                    if (idx === 0) {
+                        pSpan.textContent = first;
+                        oSpan.textContent = "";
+                    } else {
+                        pSpan.textContent = first;
+                        oSpan.textContent = rest.slice(0, idx);
+                    }
+
+                    idx++;
+
+                    if (idx > rest.length) {
+                        isDeleting = true;
+                        setTimeout(loop, 1800);
+                        return;
+                    }
+
+                } else {
+                    // ✅ 삭제
+                    if (idx <= 0) {
+                        // 모두 삭제 후 초기화
+                        pSpan.textContent = "";
+                        oSpan.textContent = "";
+                        isDeleting = false;
+                        idx = 0;
+                    } else {
+                        oSpan.textContent = rest.slice(0, idx);
+                        idx--;
+                    }
+                }
+
+                setTimeout(loop, isDeleting ? 80 : 120);
+            }
+
+            loop();
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="title">
+        <p class="typing">
+            <span class="p-style"></span><span class="o-style"></span>
+        </p>
+    </div>
+
+</body>
+
+</html>
